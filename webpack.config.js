@@ -83,22 +83,22 @@ module.exports = function (env, opt) {
 				filename: "index.html",
 				template: path.resolve(__dirname, "src/index.html"),
 			}),
-			new HtmlWebpackPlugin({
-				filename: "catalog.html",
-				template: path.resolve(__dirname, "src/catalog.html"),
-			}),
-			new HtmlWebpackPlugin({
-				filename: "product-archive.html",
-				template: path.resolve(__dirname, "src/product-archive.html"),
-			}),
-			new HtmlWebpackPlugin({
-				filename: "single-product.html",
-				template: path.resolve(__dirname, "src/single-product.html"),
-			}),
-			new HtmlWebpackPlugin({
-				filename: "cartpage.html",
-				template: path.resolve(__dirname, "src/cartpage.html"),
-			}),
+			// new HtmlWebpackPlugin({
+			// 	filename: "catalog.html",
+			// 	template: path.resolve(__dirname, "src/catalog.html"),
+			// }),
+			// new HtmlWebpackPlugin({
+			// 	filename: "product-archive.html",
+			// 	template: path.resolve(__dirname, "src/product-archive.html"),
+			// }),
+			// new HtmlWebpackPlugin({
+			// 	filename: "single-product.html",
+			// 	template: path.resolve(__dirname, "src/single-product.html"),
+			// }),
+			// new HtmlWebpackPlugin({
+			// 	filename: "cartpage.html",
+			// 	template: path.resolve(__dirname, "src/cartpage.html"),
+			// }),
 			new MiniCssExtractPlugin(),
 			new CopyPlugin({
 				patterns: [
@@ -106,10 +106,10 @@ module.exports = function (env, opt) {
 						from: "src/image",
 						to: "image",
 					},
-					{
-						from: "src/font",
-						to: "font",
-					},
+					// {
+					// 	from: "src/font",
+					// 	to: "font",
+					// },
 				]
 			}),
 			...(isProd ? [
