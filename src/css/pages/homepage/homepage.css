@@ -14,15 +14,39 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
+	margin-bottom: var(--offset-half);
 }
 
 .homepage__aparts {
-	padding-top: var(--offset);
-	padding-bottom: var(--offset);
+	margin-bottom: var(--offset-half);	
+	padding-bottom: 0;
 }
 
 .homepage__cards {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: var(--offset);
+}
+
+.homepage__services {
+	margin-bottom: var(--offset-half);	
+	padding-bottom: var(--offset-half);
+}
+
+.homepage__servicecards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--offset);
+}
+
+.homepage__map {
+	margin-bottom: var(--offset-half);
+}
+
+.homepage__map_frame {
+	width: 100%;
+	min-height: calc(var(--site-width) / 2);
+	box-shadow: var(--card-shadow-light);
+	border-radius: var(--card-radius);
 }

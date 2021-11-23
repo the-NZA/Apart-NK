@@ -1,4 +1,6 @@
 :root {
 	--header-shadow: 0px 5px 5px -5px rgba(var(--rgb-dark-blue), var(--alpha-50));
+	--card-shadow: 0px 5px 10px 2px rgba(var(--rgb-dark-blue),  var(--alpha-25));
+	--card-shadow-light: 0px 5px 10px 2px rgba(var(--rgb-dark-blue),  var(--alpha-10));
 	/* --header-shadow: 2px 2px 2px black; */
 }

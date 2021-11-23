@@ -1,0 +1,30 @@
+.hnav {
+
+}
+
+.hnav__list {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0;
+	margin: 0;
+
+	list-style: none;
+}
+
+.hnav__item {
+	margin: 0 0 0 var(--offset);
+	padding: 0;
+}
+
+.hnav__item a {
+	display: block;
+	font-weight: 500;
+	color: var(--white);
+
+	transition: var(--ease-in-out-transition);
+}
+
+.hnav__item a:hover {
+	color: var(--light-blue);
+}

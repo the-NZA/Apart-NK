@@ -7,6 +7,11 @@
 
 /* Header styles */
 @import url("./parts/header/header.css");
+@import url("./parts/header/hnav.css");
+
+/* Import cards styles */
+@import url("./parts/cards/apartcard.css");
+@import url("./parts/cards/servicecard.css");
 
 /* Homepage styles */
 @import url("./pages/homepage/homepage.css");

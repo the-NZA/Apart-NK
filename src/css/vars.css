@@ -5,7 +5,6 @@
 	/* Sizes */
 	--site-width: 1300px;
 
-	/* Colors */
-	--c-white: #ffffff;
-	--c-black: #000000;
+	/* Border radius */
+	--card-radius: calc(var(--offset-half) / 2);
 }

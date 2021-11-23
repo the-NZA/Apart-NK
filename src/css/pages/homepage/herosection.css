@@ -8,18 +8,19 @@
 .herosection__wrapper {
 	font-weight: bold;
 	background-color: rgba(var(--rgb-gray), var(--alpha-75));
+	border-radius: var(--card-radius);
 
-	/* max-width: calc(var(--site-width) / 1.5); */
+	max-width: 1000px;
 	padding: calc(var(--offset) * 3);
 }
 
 .herosection__title {
-	font-weight: 800;
+	font-weight: 600;
 	margin-bottom: var(--offset);
 }
 
 .herosection__subtitle {
-	max-width: 600px ;
+	max-width: 800px ;
 	margin: 0;
 }
 
@@ -41,6 +42,7 @@
 .herosection__btn:hover {
 	background-color: transparent;
 }
+
 .herosection__btn img {
 	display: block;
 	width: 100%;
