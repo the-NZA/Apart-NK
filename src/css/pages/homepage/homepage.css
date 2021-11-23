@@ -1,0 +1,28 @@
+.homepage {
+	/* z-index: 1; */
+}
+
+.homepage__hero {
+	background-color: var(--dark-blue);
+	background-image: url("./image/aprt_hero.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.homepage__aparts {
+	padding-top: var(--offset);
+	padding-bottom: var(--offset);
+}
+
+.homepage__cards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--offset);
+}

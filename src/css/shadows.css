@@ -1,0 +1,4 @@
+:root {
+	--header-shadow: 0px 5px 5px -5px rgba(var(--rgb-dark-blue), var(--alpha-50));
+	/* --header-shadow: 2px 2px 2px black; */
+}

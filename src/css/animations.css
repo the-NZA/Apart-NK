@@ -1,0 +1,4 @@
+:root {
+	--ease-transition: all 0.2s 0s ease;
+	--ease-in-out-transition: all 0.2s 0s ease-in-out;
+}

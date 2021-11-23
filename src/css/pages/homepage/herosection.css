@@ -1,0 +1,49 @@
+.herosection {
+	position: relative;
+	z-index: 1;
+
+	color: var(--white);
+}
+
+.herosection__wrapper {
+	font-weight: bold;
+	background-color: rgba(var(--rgb-gray), var(--alpha-75));
+
+	/* max-width: calc(var(--site-width) / 1.5); */
+	padding: calc(var(--offset) * 3);
+}
+
+.herosection__title {
+	font-weight: 800;
+	margin-bottom: var(--offset);
+}
+
+.herosection__subtitle {
+	max-width: 600px ;
+	margin: 0;
+}
+
+.herosection__btn {
+	position: absolute;
+	bottom: calc(var(--offset) * 6);
+	left: 50%;
+	transform: translateX(-50%);
+
+	appearance: none;
+	background-color: transparent;
+	border: none;
+
+	padding: 0;
+	margin: 0;
+	height: auto;
+}
+
+.herosection__btn:hover {
+	background-color: transparent;
+}
+.herosection__btn img {
+	display: block;
+	width: 100%;
+	/* max-width: 120px;
+	height: 120px; */
+}

@@ -1,3 +1,13 @@
-:root {
-	--t: #fff;
-}
+@import url("./vars.css");
+@import url("./common.css");
+@import url("./colors.css");
+@import url("./shadows.css");
+@import url("./animations.css");
+
+
+/* Header styles */
+@import url("./parts/header/header.css");
+
+/* Homepage styles */
+@import url("./pages/homepage/homepage.css");
+@import url("./pages/homepage/herosection.css");

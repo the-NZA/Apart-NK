@@ -1,38 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
 	<title>Apart-NK</title>
 </head>
-<body>
+
+<body class="site-body">
 	<header class="site-header">
 		<div class="header wrapper">
 			<div class="header__logo">
-				Apart-NK
+				<a href="#">
+					Apart-NK
+				</a>
 			</div>
 
-			<div class="header__nav">
-				<nav class="nav">
-					<ul class="nav__list">
-						<li class="nav__item">Главная</li>
-						<li class="nav__item">Апартаменты</li>
-						<li class="nav__item">Забронировать</li>
-						<li class="nav__item">Контакты</li>
-					</ul>
-				</nav>
-			</div>
+			<nav class="header__nav hnav">
+				<ul class="hnav__list">
+					<li class="hnav__item">
+						<a href="#"> Главная </a>
+					</li>
+					<li class="hnav__item">
+						<a href="#"> Апартаменты </a>
+					</li>
+					<li class="hnav__item">
+						<a href="#"> Забронировать </a>
+					</li>
+					<li class="hnav__item">
+						<a href="#"> Сервисы </a>
+					</li>
+					<li class="hnav__item">
+						<a href="#"> Контакты </a>
+					</li>
+				</ul>
+			</nav>
 		</div>
 	</header>
 
-	<main class="site-main">
-		main
+	<main class="site-main homepage">
+		<section class="homepage__hero herosection">
+			<div class="herosection__wrapper">
+				<h1 class="herosection__title">Apart-NK – здесь мощный заголовок</h1>
+				<p class="herosection__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+					deleniti architecto amet unde eligendi et aspernatur fuga, quibusdam minima rem similique ad
+					adipisci. Praesentium, obcaecati.</p>
+			</div>
+
+			<button class="button herosection__btn">
+				<img src="./image/arrow-down.svg" alt="V">
+			</button>
+		</section>
+
+		<section class="homepage__aparts wrapper">
+			<h2 class="section-title">Наши апартаменты</h2>
+
+			<div class="homepage__cards">
+				<article class="apartcard">
+					<img src="https://placekitten.com/640/360" alt="bla bla" class="apartcard__image">
+					<h3 class="apartcard__title">Название апартамента</h3>
+					<p class="apartcard__snippet">
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, totam.
+						Suscipit, nesciunt facilis voluptates vero alias maxime non
+					</p>
+					<button class="apartcard__button">Забронировать</button>
+				</article>
+
+				<article class="apartcard">
+					<img src="https://placekitten.com/640/360" alt="bla bla" class="apartcard__image">
+					<h3 class="apartcard__title">Название апартамента</h3>
+					<p class="apartcard__snippet">
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, totam.
+						Suscipit, nesciunt facilis voluptates vero alias maxime non
+					</p>
+					<button class="apartcard__button">Забронировать</button>
+				</article>
+
+				<article class="apartcard">
+					<img src="https://placekitten.com/640/360" alt="bla bla" class="apartcard__image">
+					<h3 class="apartcard__title">Название апартамента</h3>
+					<p class="apartcard__snippet">
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, totam.
+						Suscipit, nesciunt facilis voluptates vero alias maxime non
+					</p>
+					<button class="apartcard__button">Забронировать</button>
+				</article>
+
+				<article class="apartcard">
+					<img src="https://placekitten.com/640/360" alt="bla bla" class="apartcard__image">
+					<h3 class="apartcard__title">Название апартамента</h3>
+					<p class="apartcard__snippet">
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, totam.
+						Suscipit, nesciunt facilis voluptates vero alias maxime non
+					</p>
+					<button class="apartcard__button">Забронировать</button>
+				</article>
+			</div>
+		</section>
+
+		<section class="homepage__services wrapper">
+			this is services section
+		</section>
 	</main>
+
+	<div class="site-go-booking">
+			<a href="#">Перейти к бронированию</a>
+	</div>
+
 	<footer class="site-footer">
-		footer
+		<div class="wrapper">
+			footer
+		</div>
 	</footer>
-	
+
 </body>
+
 </html>

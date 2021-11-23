@@ -1,0 +1,61 @@
+body {
+	font-family: system-ui;
+	line-height: 1.5;
+	scroll-behavior: smooth;
+	min-height: 100vh;
+}
+
+.wrapper {
+	max-width: var(--site-width);
+	margin: 0 auto;
+	padding: var(--offset-half);
+}
+
+.site-body {
+	display: grid;
+	grid-template-rows: max-content 1fr max-content;
+}
+
+.site-header {
+	background-color: var(--gray);
+	box-shadow: var(--header-shadow);
+
+	z-index: 10;
+	position: sticky;
+	top: 0;
+}
+
+.site-main {
+	background-color: ghostwhite;
+	box-sizing: border-box;
+}
+
+.site-go-booking {
+	background-color: var(--orange);
+	text-align: center;
+}
+
+.site-go-booking a {
+	display: block;
+	font-weight: 600;
+	color: var(--white);
+	text-transform: uppercase;
+	text-align: center;
+	padding: var(--offset-half);
+
+	transition: var(--ease-in-out-transition);
+}
+
+.site-go-booking a:hover {
+	color: var(--light-blue);
+}
+
+.site-footer {
+	background-color: white;
+}
+
+.section-title {
+	font-weight: 600;
+	color: var(--dark-blue);
+	margin-bottom: var(--offset);
+}
