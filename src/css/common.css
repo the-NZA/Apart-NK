@@ -51,7 +51,7 @@ body {
 }
 
 .site-footer {
-	background-color: white;
+	background-color: var(--gray);
 }
 
 .section-title {

@@ -9,6 +9,10 @@
 @import url("./parts/header/header.css");
 @import url("./parts/header/hnav.css");
 
+/* Footer styles */
+@import url("./parts/footer/footer.css");
+@import url("./parts/footer/footerwidget.css");
+
 /* Import cards styles */
 @import url("./parts/cards/apartcard.css");
 @import url("./parts/cards/servicecard.css");

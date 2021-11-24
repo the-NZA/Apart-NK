@@ -1,0 +1,26 @@
+.footer {
+	color: var(--white);
+	padding-top: var(--offset);
+	padding-bottom: var(--offset);
+}
+
+.footer__widgets{
+	display: grid;
+	grid-template-columns: 1fr max-content max-content 1fr;
+	gap: var(--offset);
+	margin-bottom: var(--offset-half);
+}
+
+.footer__copyright{
+	font-weight: 500;
+	vertical-align: bottom;
+}
+
+.footer__copyright a {
+	color: var(--offset);
+	transition: var(--ease-in-out-transition);
+}
+
+.footer__copyright a:hover {
+	color: var(--light-blue);
+}

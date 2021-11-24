@@ -1,0 +1,34 @@
+.footerwidget {
+	font-weight: 500;
+}
+
+.footerwidget__title {
+	font-weight: 600;
+	font-size: 2rem;
+}
+
+.footerwidget__text {
+	margin-bottom: 0;
+}
+
+.footerwidget__body {
+	list-style: none;
+	margin-bottom: 0;
+}
+
+.footerwidget__body a {
+	color: var(--white);
+	transition: var(--ease-in-out-transition);
+}
+
+.footerwidget__body a:hover {
+	color: var(--light-blue);
+}
+
+.footerwidget__grid {
+	display: grid;
+	grid-template-columns: 80px 1fr;
+	align-items: center;
+	font-size: 1.5rem;
+	line-height: 1.5;
+}
