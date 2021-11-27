@@ -23,3 +23,6 @@
 
 /* Apartments styles */
 @import url("./pages/apartments/apartments.css");
+
+/* Services styles */
+@import url("./pages/services/services.css");

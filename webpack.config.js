@@ -87,10 +87,10 @@ module.exports = function (env, opt) {
 				filename: "apartments.html",
 				template: path.resolve(__dirname, "src/apartments.html"),
 			}),
-			// new HtmlWebpackPlugin({
-			// 	filename: "product-archive.html",
-			// 	template: path.resolve(__dirname, "src/product-archive.html"),
-			// }),
+			new HtmlWebpackPlugin({
+				filename: "services.html",
+				template: path.resolve(__dirname, "src/services.html"),
+			}),
 			// new HtmlWebpackPlugin({
 			// 	filename: "single-product.html",
 			// 	template: path.resolve(__dirname, "src/single-product.html"),
