@@ -59,3 +59,10 @@ body {
 	color: var(--dark-blue);
 	margin-bottom: var(--offset);
 }
+
+.page-title {
+	font-weight: bold;
+	color: var(--dark-blue);
+	font-size: 3.5rem;
+	margin-bottom: var(--offset);
+}

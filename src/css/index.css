@@ -20,3 +20,6 @@
 /* Homepage styles */
 @import url("./pages/homepage/homepage.css");
 @import url("./pages/homepage/herosection.css");
+
+/* Apartments styles */
+@import url("./pages/apartments/apartments.css");
