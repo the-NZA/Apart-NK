@@ -51,6 +51,10 @@ function posts_custom_fields()
 			Field::make('textarea', 'homehero_snippet', 'Описание')
 				->set_attribute('placeholder', 'Описание для стартового экрана')
 				->set_required(true),
+			Field::make('text', 'map_url', 'Ссылка на виджет карт')
+				->set_attribute('placeholder', 'Вставьте ссылку на готовый виджет яндекс карт')
+				->set_attribute('type', 'url')
+				->set_required(true),
 		));
 }
 

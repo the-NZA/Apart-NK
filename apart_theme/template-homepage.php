@@ -42,7 +42,7 @@ get_header(); ?>
 				'order'		=> 'DESC',
 			]);
 
-			// Default apartments image is attachment with ID 24
+			// Default apartments image for apartments is attachment with ID 24
 			$defaultImgURL = wp_get_attachment_image_url(24, 'full');
 
 			foreach ($apartments as $apart) :
@@ -80,62 +80,38 @@ get_header(); ?>
 		<h2 class="section-title">Дополнительные услуги</h2>
 
 		<div class="homepage__servicecards">
-			<article class="servicecard">
-				<img src="https://placekitten.com/200/200" alt="Услуга" class="servicecard__image">
-				<h3 class="servicecard__title">Название услуги</h3>
-				<p class="servicecard__snippet">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-					necessitatibus fuga quos adipisci debitis animi perferendis laboriosam nulla ad. Assumenda
-					eveniet nam dolorem aspernatur nostrum?
-				</p>
-			</article>
+			<?php
+			$services = get_posts([
+				'numberposts' 	=> -1,
+				'post_type' 	=> 'services',
+				'post_status' 	=> 'publish',
+				'orderby'	=> 'date',
+				'order'		=> 'DESC',
+			]);
 
-			<article class="servicecard">
-				<img src="https://placekitten.com/200/200" alt="Услуга" class="servicecard__image">
-				<h3 class="servicecard__title">Название услуги</h3>
-				<p class="servicecard__snippet">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-					necessitatibus fuga quos adipisci debitis animi perferendis laboriosam nulla ad. Assumenda
-					eveniet nam dolorem aspernatur nostrum?
-				</p>
-			</article>
+			foreach ($services as $serv) :
+			?>
+				<article class="servicecard">
+					<?php $imgURL = get_the_post_thumbnail_url($serv->ID, 'full'); ?>
 
-			<article class="servicecard">
-				<img src="https://placekitten.com/200/200" alt="Услуга" class="servicecard__image">
-				<h3 class="servicecard__title">Название услуги</h3>
-				<p class="servicecard__snippet">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-					necessitatibus fuga quos adipisci debitis animi perferendis laboriosam nulla ad. Assumenda
-					eveniet nam dolorem aspernatur nostrum?
-				</p>
-			</article>
+					<img src="<?php echo $imgURL; ?>" alt="<?php echo $serv->post_title; ?>" class="servicecard__image">
 
-			<article class="servicecard">
-				<img src="https://placekitten.com/200/200" alt="Услуга" class="servicecard__image">
-				<h3 class="servicecard__title">Название услуги</h3>
-				<p class="servicecard__snippet">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-					necessitatibus fuga quos adipisci debitis animi perferendis laboriosam nulla ad. Assumenda
-					eveniet nam dolorem aspernatur nostrum?
-				</p>
-			</article>
+					<h3 class="servicecard__title"><?php echo $serv->post_title; ?></h3>
 
-			<article class="servicecard">
-				<img src="https://placekitten.com/200/200" alt="Услуга" class="servicecard__image">
-				<h3 class="servicecard__title">Название услуги</h3>
-				<p class="servicecard__snippet">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-					necessitatibus fuga quos adipisci debitis animi perferendis laboriosam nulla ad. Assumenda
-					eveniet nam dolorem aspernatur nostrum?
-				</p>
-			</article>
-
+					<p class="servicecard__snippet">
+						<?php echo carbon_get_post_meta($serv->ID, 'post_snippet'); ?>
+					</p>
+				</article>
+			<?php
+			endforeach;
+			?>
 		</div>
 	</section>
 
 	<section class="homepage__map wrapper">
+		<?php $mapURL = carbon_get_post_meta($pageID, 'map_url'); ?>
 
-		<iframe class="homepage__map_frame" src="https://yandex.ru/map-widget/v1/?um=constructor%3A387157d010071563fc7b7862b559e665f6121bc29f47c389e8c50d61ad11e43d&amp;source=constructor" frameborder="0">
+		<iframe class="homepage__map_frame" src="<?php echo $mapURL ? $mapURL : ''; ?>" frameborder="0">
 		</iframe>
 	</section>
 </main>
