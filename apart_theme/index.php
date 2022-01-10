@@ -15,7 +15,7 @@ get_header();?>
 		</div>
 
 		<button class="button herosection__btn">
-			<img src="./image/arrow-down.svg" alt="V">
+			<img src="<?php echo get_stylesheet_directory_uri();?>/assets/image/arrow-down.svg" alt="V">
 		</button>
 	</section>
 
