@@ -4,6 +4,10 @@
  * Contains the closing of the tags and <footer>
  */
 ?>
+	<div class="site-go-booking">
+		<a href="#">Перейти к бронированию</a>
+	</div>
+
 	<footer class="site-footer">
 		<div class="footer wrapper">
 			<div class="footer__widgets">
