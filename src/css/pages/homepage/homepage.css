@@ -27,6 +27,22 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: var(--offset);
+
+	margin-bottom: var(--offset);
+}
+
+.homepage__showall {
+	display: flex;
+	justify-content: center;
+}
+
+.homepage__showall .button {
+	transition: var(--ease-in-out-transition);
+}
+
+.homepage__showall .button:hover {
+	color: var(--orange);
+	border-color: var(--orange);
 }
 
 .homepage__services {

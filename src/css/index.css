@@ -26,3 +26,6 @@
 
 /* Services styles */
 @import url("./pages/services/services.css");
+
+/* Buttons styles */
+@import url("./parts/buttons.css");

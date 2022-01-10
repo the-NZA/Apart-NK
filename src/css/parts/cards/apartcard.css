@@ -38,4 +38,5 @@
 
 .apartcard__button:hover {
 	background-color: var(--dark-blue);
+	border-color: var(--dark-blue);
 }
