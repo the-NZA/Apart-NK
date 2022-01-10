@@ -2,10 +2,19 @@
 	border: 2px solid var(--dark-blue);
 	border-radius: calc(var(--card-radius) );
 	overflow: hidden;
+
+	display: grid;
+
+	grid-template-rows: min-content 1fr min-content;
 }
 
 .apartcard__image {
 	min-height: calc(var(--site-width) / 6);
+	max-height: calc(var(--site-width) / 6);
+
+	width: 100%;
+	margin: 0 auto;
+
 	display: block;
 
 	object-fit: cover;
@@ -18,6 +27,10 @@
 	flex-direction: column;
 }
 
+.apartcard__footer {
+	padding: 0 var(--offset-half) var(--offset-half) var(--offset-half);
+}
+
 .apartcard__title {
 	margin-bottom: var(--offset-half);
 	font-size: 2.3rem;
@@ -27,12 +40,13 @@
 }
 
 .apartcard__snippet {
-	margin-bottom: var(--offset-half);
+	margin-bottom: 0;
 }
 
 .apartcard__button {
 	margin-bottom: 0;
 	max-width: 100%;
+	width: 100%;
 	transition: var(--ease-in-out-transition);
 }
 

@@ -35,7 +35,9 @@ function posts_custom_fields()
 		->where('post_type', 'IN', ['page', 'post', 'services', 'apartments'])
 		->where('post_template', '!=', 'template-homepage.php')
 		->add_fields(array(
-			Field::make('textarea', 'post_snippet', 'Описание'),
+			Field::make('textarea', 'post_snippet', 'Описание')
+				->set_attribute('placeholder', 'Описание для отображения на сайте')
+				->set_required(true),
 		));
 
 	// * Homepage templated fields

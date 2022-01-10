@@ -33,53 +33,46 @@ get_header(); ?>
 		<h2 class="section-title">Наши апартаменты</h2>
 
 		<div class="homepage__cards">
-			<article class="apartcard">
-				<img src="https://placekitten.com/640/360" alt="bla bla" class="apartcard__image">
-				<div class="apartcard__body">
-					<h3 class="apartcard__title">Название апартамента</h3>
-					<p class="apartcard__snippet">
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, totam.
-						Suscipit, nesciunt facilis voluptates vero alias maxime non
-					</p>
-					<button class="apartcard__button">Забронировать</button>
-				</div>
-			</article>
+			<?php
+			$apartments = get_posts([
+				'numberposts' 	=> 6,
+				'post_type' 	=> 'apartments',
+				'post_status' 	=> 'publish',
+				'orderby'	=> 'date',
+				'order'		=> 'DESC',
+			]);
 
-			<article class="apartcard">
-				<img src="https://placekitten.com/640/360" alt="bla bla" class="apartcard__image">
-				<div class="apartcard__body">
-					<h3 class="apartcard__title">Название апартамента</h3>
-					<p class="apartcard__snippet">
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, totam.
-						Suscipit, nesciunt facilis voluptates vero alias maxime non
-					</p>
-					<button class="apartcard__button">Забронировать</button>
-				</div>
-			</article>
+			// Default apartments image is attachment with ID 24
+			$defaultImgURL = wp_get_attachment_image_url(24, 'full');
 
-			<article class="apartcard">
-				<img src="https://placekitten.com/640/360" alt="bla bla" class="apartcard__image">
-				<div class="apartcard__body">
-					<h3 class="apartcard__title">Название апартамента</h3>
-					<p class="apartcard__snippet">
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, totam.
-						Suscipit, nesciunt facilis voluptates vero alias maxime non
-					</p>
-					<button class="apartcard__button">Забронировать</button>
-				</div>
-			</article>
+			foreach ($apartments as $apart) :
+			?>
+				<article class="apartcard">
+					<?php $imgURL = get_the_post_thumbnail_url($apart->ID, 'full'); ?>
 
-			<article class="apartcard">
-				<img src="https://placekitten.com/640/360" alt="bla bla" class="apartcard__image">
-				<div class="apartcard__body">
-					<h3 class="apartcard__title">Название апартамента</h3>
-					<p class="apartcard__snippet">
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, totam.
-						Suscipit, nesciunt facilis voluptates vero alias maxime non
-					</p>
-					<button class="apartcard__button">Забронировать</button>
-				</div>
-			</article>
+					<img src="<?php echo $imgURL ? $imgURL : $defaultImgURL; ?>" alt="<?php echo $apart->post_title; ?>" class="apartcard__image" style="<?php echo !$imgURL ? 'object-fit: contain' : '' ?>">
+
+					<div class="apartcard__body">
+						<h3 class="apartcard__title"><?php echo $apart->post_title; ?></h3>
+
+						<p class="apartcard__snippet">
+							<?php echo carbon_get_post_meta($apart->ID, 'post_snippet'); ?>
+						</p>
+					</div>
+
+					<div class="apartcard__footer">
+						<a class="apartcard__button button" href="<?php echo get_permalink($apart->ID); ?>">Смотреть</a>
+					</div>
+				</article>
+			<?php
+			endforeach;
+			?>
+		</div>
+
+		<div class="homepage__showall">
+			<a href="<?php echo get_post_type_archive_link('apartments'); ?>" class="button button-outline button-large">
+				Смотреть все
+			</a>
 		</div>
 	</section>
 

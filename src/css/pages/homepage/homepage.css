@@ -20,7 +20,6 @@
 
 .homepage__aparts {
 	margin-bottom: var(--offset-half);	
-	padding-bottom: 0;
 }
 
 .homepage__cards {
@@ -37,6 +36,7 @@
 }
 
 .homepage__showall .button {
+	margin-bottom: 0;
 	transition: var(--ease-in-out-transition);
 }
 
