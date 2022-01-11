@@ -6,12 +6,7 @@
  */
 ?>
 <div class="site-go-booking">
-
-	<a href="
-	<?php
-	// 26 – ID for booking page
-	echo get_page_link(26);
-	?>">Перейти к бронированию</a>
+	<a href="<?php echo BOOKING_URL; ?>">Перейти к бронированию</a>
 </div>
 
 <footer class="site-footer">
