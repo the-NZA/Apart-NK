@@ -91,6 +91,10 @@ module.exports = function (env, opt) {
 				filename: "services.html",
 				template: path.resolve(__dirname, "src/services.html"),
 			}),
+			new HtmlWebpackPlugin({
+				filename: "page.html",
+				template: path.resolve(__dirname, "src/page.html"),
+			}),
 			// new HtmlWebpackPlugin({
 			// 	filename: "single-product.html",
 			// 	template: path.resolve(__dirname, "src/single-product.html"),
