@@ -182,7 +182,7 @@ add_action('after_setup_theme', function () {
 	// * Register menus
 	register_nav_menus([
 		'header_menu' => 'Меню в шапке',
-		// 'footer_menu' => 'Меню в подвале'
+		'footer_menu' => 'Меню в подвале'
 	]);
 
 	// * Include theme helpers
