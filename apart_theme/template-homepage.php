@@ -34,38 +34,24 @@ get_header(); ?>
 
 		<div class="homepage__cards">
 			<?php
+			global $post;
+
 			$apartments = get_posts([
-				'numberposts' 	=> 6,
-				'post_type' 	=> 'apartments',
-				'post_status' 	=> 'publish',
-				'orderby'	=> 'date',
-				'order'		=> 'DESC',
+				'numberposts' 	 => 6,
+				'post_type' 	 => 'apartments',
+				'post_status' 	 => 'publish',
+				'orderby'	 => 'date',
+				'order'		 => 'DESC',
+				'posts_per_page' => -1,
 			]);
 
-			// Default apartments image for apartments is attachment with ID 24
-			$defaultImgURL = wp_get_attachment_image_url(24, 'full');
+			foreach ($apartments as $post) {
+				setup_postdata($post);
 
-			foreach ($apartments as $apart) :
-			?>
-				<article class="apartcard">
-					<?php $imgURL = get_the_post_thumbnail_url($apart->ID, 'full'); ?>
+				get_template_part('template-parts/content/apartcard');
+			}
 
-					<img src="<?php echo $imgURL ? $imgURL : $defaultImgURL; ?>" alt="<?php echo $apart->post_title; ?>" class="apartcard__image" style="<?php echo !$imgURL ? 'object-fit: contain' : '' ?>">
-
-					<div class="apartcard__body">
-						<h3 class="apartcard__title"><?php echo $apart->post_title; ?></h3>
-
-						<p class="apartcard__snippet">
-							<?php echo carbon_get_post_meta($apart->ID, 'post_snippet'); ?>
-						</p>
-					</div>
-
-					<div class="apartcard__footer">
-						<a class="apartcard__button button" href="<?php echo get_permalink($apart->ID); ?>">Смотреть</a>
-					</div>
-				</article>
-			<?php
-			endforeach;
+			wp_reset_postdata();
 			?>
 		</div>
 

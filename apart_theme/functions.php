@@ -184,4 +184,12 @@ add_action('after_setup_theme', function () {
 		'header_menu' => 'Меню в шапке',
 		// 'footer_menu' => 'Меню в подвале'
 	]);
+
+	// * Include theme helpers
+	require_once "include/aprt_helpers.php";
+});
+
+// * Remove prefix like "Archive: ", "Рубрика: ", "Метка: ", etc. from archive page title
+add_filter('get_the_archive_title', function ($title) {
+	return preg_replace('~^[^:]+: ~', '', $title);
 });
