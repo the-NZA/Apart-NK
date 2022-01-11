@@ -1,0 +1,21 @@
+.phone_email {
+	display: flex;
+
+	max-width: max-content;
+	align-items: center;
+	margin: 0 auto;
+}
+
+.phone_email__item {
+	margin-right: var(--offset);
+}
+
+.phone_email__item:last-of-type {
+	margin-right: 0;
+}
+
+.phone_email__header {
+	font-weight: bold;
+	margin-bottom: var(--offset-half);
+	font-size: 2rem;
+}

@@ -1,61 +1,27 @@
 <?php
-
-/**
- * Template part for displaying page content in page.php
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
+/*
+ * Template part for displaying general page content in page.php
  */
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php
+$pageID = get_the_ID();
+$pageImg = get_the_post_thumbnail_url($pageID, 'full');
+?>
 
-	<?php if (!is_front_page()) : ?>
-		<header class="entry-header alignwide">
-			<?php
-			the_title('<h1 class="entry-title">', '</h1>');
-			// get_template_part( 'template-parts/header/entry-header' ); 
-			?>
-			<?php /* twenty_twenty_one_post_thumbnail(); */ ?>
-		</header><!-- .entry-header -->
-	<?php elseif (has_post_thumbnail()) : ?>
-		<header class="entry-header alignwide">
-			<?php /* twenty_twenty_one_post_thumbnail(); */ ?>
-		</header><!-- .entry-header -->
-	<?php endif; ?>
+<main class="site-main singlepage">
+	<header class="singlepage__header" style="<?php echo $pageImg ? 'background-image: url(' . $pageImg . ');' : ''; ?>">
 
-	<div class="entry-content">
-		<?php
-		the_content();
+		<div class="singlepage__headerwrapper">
+			<h2 class="singlepage__title"><?php echo get_the_title(); ?></h2>
 
-		wp_link_pages(
-			array(
-				'before'   => '<nav class="page-links" aria-label="' . esc_attr__('Page', 'twentytwentyone') . '">',
-				'after'    => '</nav>',
-				/* translators: %: Page number. */
-				'pagelink' => esc_html__('Page %', 'twentytwentyone'),
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
+			<p class="singlepage__snippet"><?php echo carbon_get_post_meta($pageID, 'post_snippet'); ?></p>
+		</div>
 
-	<?php if (get_edit_post_link()) : ?>
-		<footer class="entry-footer default-max-width">
-			<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post. Only visible to screen readers. */
-					esc_html__('Edit %s', 'twentytwentyone'),
-					'<span class="screen-reader-text">' . get_the_title() . '</span>'
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+	</header>
+
+	<article id="post-<?php echo $pageID; ?>" <?php post_class('singlepage__article wrapper'); ?>>
+		<?php the_content(); ?>
+	</article>
+</main>

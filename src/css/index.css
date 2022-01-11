@@ -38,3 +38,6 @@
 
 /* Buttons styles */
 @import url("./parts/buttons.css");
+
+/* Phone with email shortcode styles */
+@import url("./parts/shortcode/phone_email.css");

@@ -90,7 +90,7 @@ get_header(); ?>
 	</section>
 
 	<section class="homepage__map wrapper">
-		<?php $mapURL = carbon_get_post_meta($pageID, 'map_url'); ?>
+		<?php $mapURL = carbon_get_theme_option('map_url'); ?>
 
 		<iframe class="homepage__map_frame" src="<?php echo $mapURL ? $mapURL : ''; ?>" frameborder="0">
 		</iframe>

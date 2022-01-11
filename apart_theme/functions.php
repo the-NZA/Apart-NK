@@ -9,17 +9,21 @@ function crb_attach_theme_options()
 {
 	Container::make('theme_options', __('Theme Options'))
 		->add_fields([
-			Field::make('text', 'ignx_phone_number', __('Phone Number'))
-				->set_attribute('placeholder', __('Input phone number'))
+			Field::make('text', 'aprt_phone_number', 'Номер телефона')
+				->set_attribute('placeholder', 'Введите номер телефона')
 				->set_attribute('type', 'tel')
 				// ->set_attribute('pattern', '([\+]*[7-8]{1}\s?[\(]*9[0-9]{2}[\)]*\s?\d{3}[-]*\d{2}[-]*\d{2})')
 				->set_width(50)
 				->set_required(true),
-			Field::make('text', 'ignx_email', __('Email'))
-				->set_attribute('placeholder', __('Input email address'))
+			Field::make('text', 'aprt_email', 'Email')
+				->set_attribute('placeholder', 'Введите email')
 				->set_attribute('type', 'email')
 				// ->set_attribute('pattern', '([\+]*[7-8]{1}\s?[\(]*9[0-9]{2}[\)]*\s?\d{3}[-]*\d{2}[-]*\d{2})')
 				->set_width(50)
+				->set_required(true),
+			Field::make('text', 'map_url', 'Ссылка на виджет карт')
+				->set_attribute('placeholder', 'Вставьте ссылку на готовый виджет яндекс карт')
+				->set_attribute('type', 'url')
 				->set_required(true),
 		]);
 }
@@ -50,10 +54,6 @@ function posts_custom_fields()
 				->set_required(true),
 			Field::make('textarea', 'homehero_snippet', 'Описание')
 				->set_attribute('placeholder', 'Описание для стартового экрана')
-				->set_required(true),
-			Field::make('text', 'map_url', 'Ссылка на виджет карт')
-				->set_attribute('placeholder', 'Вставьте ссылку на готовый виджет яндекс карт')
-				->set_attribute('type', 'url')
 				->set_required(true),
 		));
 }
@@ -205,4 +205,35 @@ function archive_posts_count($query)
 	if ($query->is_post_type_archive("services")) {
 		$query->set('posts_per_page', -1);
 	}
+}
+
+// * Theme shortcodes
+add_shortcode('aprt_phone_email', 'aprt_phone_email_shortcode');
+function aprt_phone_email_shortcode($atts)
+{
+	$phone = carbon_get_theme_option('aprt_phone_number');
+	$email = carbon_get_theme_option('aprt_email');
+	ob_start();
+?>
+	<div class="phone_email">
+		<div class="phone_email__item">
+			<h4 class="phone_email__header">Наш телефон</h4>
+
+			<a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a>
+		</div>
+
+		<div class="phone_email__item">
+			<h4 class="phone_email__header">Наш email</h4>
+
+			<a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+		</div>
+	</div>
+<?php
+	return ob_get_clean();
+}
+
+add_shortcode('aprt_booking', 'aprt_booking_shortcode');
+function aprt_booking_shortcode($atts)
+{
+	return 'HERE MUST BE BOOKING WIDGET MARKUP';
 }
