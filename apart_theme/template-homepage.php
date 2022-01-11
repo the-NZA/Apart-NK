@@ -67,29 +67,24 @@ get_header(); ?>
 
 		<div class="homepage__servicecards">
 			<?php
+			global $post;
+
 			$services = get_posts([
-				'numberposts' 	=> -1,
-				'post_type' 	=> 'services',
-				'post_status' 	=> 'publish',
-				'orderby'	=> 'date',
-				'order'		=> 'DESC',
+				'numberposts' 	 => -1,
+				'post_type' 	 => 'services',
+				'post_status' 	 => 'publish',
+				'orderby'	 => 'date',
+				'order'		 => 'DESC',
+				'posts_per_page' => -1,
 			]);
 
-			foreach ($services as $serv) :
-			?>
-				<article class="servicecard">
-					<?php $imgURL = get_the_post_thumbnail_url($serv->ID, 'full'); ?>
+			foreach ($services as $post) {
+				setup_postdata($post);
 
-					<img src="<?php echo $imgURL; ?>" alt="<?php echo $serv->post_title; ?>" class="servicecard__image">
+				get_template_part('template-parts/content/servicecard');
+			}
 
-					<h3 class="servicecard__title"><?php echo $serv->post_title; ?></h3>
-
-					<p class="servicecard__snippet">
-						<?php echo carbon_get_post_meta($serv->ID, 'post_snippet'); ?>
-					</p>
-				</article>
-			<?php
-			endforeach;
+			wp_reset_postdata();
 			?>
 		</div>
 	</section>

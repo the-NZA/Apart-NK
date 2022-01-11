@@ -1,27 +1,26 @@
 <?php
 /*
- * The template for displaying apartments archive page
+ * The template for displaying services archive page
  */
 
 get_header();
 
 $title = get_the_archive_title();
-// $description = get_the_archive_description();
 ?>
 
 <?php if (have_posts()) : ?>
 
 	<main class="site-main archivepage">
-		<section class="apartments wrapper">
+		<section class="services wrapper">
 			<h1 class="page-title"><?php echo $title; ?></h1>
 
-			<div class="apartments__cards">
+			<div class="services__cards">
 
 				<?php while (have_posts()) : ?>
 					<?php
 
 					the_post();
-					get_template_part('template-parts/content/apartcard');
+					get_template_part('template-parts/content/servicecard');
 
 					?>
 				<?php endwhile; ?>

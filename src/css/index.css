@@ -17,9 +17,15 @@
 @import url("./parts/cards/apartcard.css");
 @import url("./parts/cards/servicecard.css");
 
+/* Import pagination styles */
+@import url("./parts/pagination.css");
+
 /* Homepage styles */
 @import url("./pages/homepage/homepage.css");
 @import url("./pages/homepage/herosection.css");
+
+/* Archivepages styles */
+@import url("./pages/archive/archivepage.css");
 
 /* Apartments styles */
 @import url("./pages/apartments/apartments.css");
