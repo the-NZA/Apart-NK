@@ -193,3 +193,16 @@ add_action('after_setup_theme', function () {
 add_filter('get_the_archive_title', function ($title) {
 	return preg_replace('~^[^:]+: ~', '', $title);
 });
+
+// * Set posts per page for specific cases
+add_action('pre_get_posts', 'archive_posts_count', 1);
+function archive_posts_count($query)
+{
+	if (is_admin() || !$query->is_main_query()) {
+		return;
+	}
+
+	if ($query->is_post_type_archive("services")) {
+		$query->set('posts_per_page', -1);
+	}
+}
