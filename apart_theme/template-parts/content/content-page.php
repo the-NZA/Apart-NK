@@ -2,7 +2,6 @@
 /*
  * Template part for displaying general page content in page.php
  */
-
 ?>
 
 <?php

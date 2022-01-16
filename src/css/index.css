@@ -36,6 +36,9 @@
 /* Single page styles */
 @import url("./pages/singlepage/singlepage.css");
 
+/* Single apartments styles */
+@import url("./pages/apartsingle/apartsingle.css");
+
 /* Buttons styles */
 @import url("./parts/buttons.css");
 
