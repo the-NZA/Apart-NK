@@ -1,0 +1,22 @@
+.apartprops {
+	max-width: 100%;
+	min-width: 30vw;
+	
+	margin: 0 auto;
+}
+
+.apartprops__title {
+	font-weight: 600;
+
+	margin-bottom: var(--offset-half);
+	padding-bottom: var(--offset-half);
+
+	border-bottom: 1px solid var(--dark-blue);
+}
+
+.apartprops__list {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: var(--offset-half) var(--offset);
+}
+

@@ -33,6 +33,39 @@ function crb_attach_theme_options()
 add_action('carbon_fields_register_fields', 'posts_custom_fields');
 function posts_custom_fields()
 {
+	// * Apartments properties
+	Container::make('post_meta', 'Конфигурация апартамента')
+		->where('post_type', '=', 'apartments')
+		->add_fields([
+			Field::make('media_gallery', 'apartprop_gallery', 'Галлерея изображений')
+				->set_type(['image', 'video'])
+				->set_duplicates_allowed(false),
+			Field::make('text', 'apartprop_area', 'Площадь')
+				->set_width(50)
+				->set_attribute('type', 'number')
+				->set_attribute('min', '0')
+				->set_attribute('placeholder', 'Общая площадь помещения'),
+			Field::make('text', 'apartprop_rooms', 'Количество комнат')
+				->set_width(50)
+				->set_attribute('type', 'number')
+				->set_attribute('min', '0')
+				->set_attribute('placeholder', 'Общее количество комнат'),
+			Field::make('text', 'apartprop_beds', 'Количество кроватей')
+				->set_width(50)
+				->set_attribute('type', 'number')
+				->set_attribute('min', '0')
+				->set_attribute('placeholder', 'Общее количество спальных мест'),
+			Field::make('text', 'apartprop_baths', 'Количество ванных комнат')
+				->set_width(50)
+				->set_attribute('type', 'number')
+				->set_attribute('min', '0')
+				->set_attribute('placeholder', 'Общее количество ванных комнат'),
+			Field::make('text', 'apartprop_view', 'На что выходят окна')
+				->set_width(50)
+				->set_attribute('placeholder', 'Введите на что выходят окна (город, парк, реку или что-то другое)'),
+
+		]);
+
 	// * All pages, posts, services and apartments 
 	// * except homepage templated
 	Container::make('post_meta', 'Дополнительные настройки')
@@ -70,6 +103,11 @@ function crb_load()
 add_action("wp_enqueue_scripts", function () {
 	wp_enqueue_style('aprt-styles', get_stylesheet_directory_uri() . '/assets/main.css');
 	wp_enqueue_script('aprt-scripts', get_stylesheet_directory_uri() . '/assets/main.js', array(), null, true);
+
+	if (is_singular('apartments')) {
+		wp_enqueue_style('aprt-slick-styles', get_stylesheet_directory_uri() . '/assets/slick/slick.css');
+		wp_enqueue_script('aprt-slick-scripts', get_stylesheet_directory_uri() . '/assets/slick/slick.min.js', ['jquery'], null, false);
+	}
 });
 
 // * Add theme support for some wordpress built-in features

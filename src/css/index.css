@@ -38,6 +38,8 @@
 
 /* Single apartments styles */
 @import url("./pages/apartsingle/apartsingle.css");
+@import url("./pages/apartsingle/apartprops.css");
+@import url("./pages/apartsingle/propitem.css");
 
 /* Buttons styles */
 @import url("./parts/buttons.css");

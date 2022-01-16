@@ -1,1 +1,1 @@
-!function(){"use strict";window.addEventListener("DOMContentLoaded",(function(){}))}();
+!function(){"use strict";window.addEventListener("DOMContentLoaded",(function(){document.querySelector(".apartsingle__gallery")&&jQuery(document).ready((function(e){e(".apartgallery").slick({dots:!0,infinite:!0,speed:500,slidesToShow:1,adaptiveHeight:!0})}))}))}();

@@ -4,10 +4,11 @@
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 	grid-template-areas: 
-		"apGallery apGallery"
 		"apHeader apHeader"
-		"apContent apAside";
-	gap: calc(var(--offset) * 2) var(--offset);
+		"apProps apProps"
+		"apContent apAside"
+		"apGallery apGallery";
+	gap: var(--offset);
 
 	margin-bottom: var(--offset);
 }
@@ -15,6 +16,7 @@
 .apartsingle__gallery {
 	grid-area: apGallery;
 
+	max-width: var(--site-width);
 	min-height: 40vh;
 	padding: var(--offset-half);
 
@@ -44,6 +46,17 @@
 	margin: var(--offset-half) auto 0 auto;
 }
 
+.apartsingle__properties {
+	grid-area: apProps;
+
+	padding: var(--offset);
+
+	border-radius: var(--offset-half);
+	background-color: rgba(var(--rgb-light-blue), var(--alpha-25));
+
+	color: var(--dark-blue);
+}
+
 .apartsingle__content {
 	grid-area: apContent;
 
@@ -68,10 +81,6 @@
 }
 
 @media screen and (width <= 1100px){
-	.apartsingle {
-		gap: var(--offset);
-	}
-
 	.apartsingle__header {
 		padding: calc(var(--offset-half) * 1.5);
 	}
