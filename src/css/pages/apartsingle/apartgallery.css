@@ -1,0 +1,38 @@
+.apartgallery {
+
+}
+
+.slick-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+
+	z-index: 1;
+	padding: 15px;
+	margin: 0;
+
+	width: auto;
+	height: auto;
+
+	font-size: 4rem;
+	border: none;
+	background-color: transparent;
+
+	transition: var(--main-transition);
+}
+
+.slick-arrow:hover {
+	background-color: rgba(var(--rgb-dark-blue), var(--alpha-25));
+}
+
+.slick-arrow:focus {
+	background-color: rgba(var(--rgb-dark-blue), var(--alpha-25));
+}
+
+.slick-prev  {
+	left: var(--offset);
+}
+
+.slick-next  {
+	right: var(--offset);
+}

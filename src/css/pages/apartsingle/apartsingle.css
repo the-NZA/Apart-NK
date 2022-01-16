@@ -4,10 +4,10 @@
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 	grid-template-areas: 
+		"apGallery apGallery"
 		"apHeader apHeader"
 		"apProps apProps"
-		"apContent apAside"
-		"apGallery apGallery";
+		"apContent apAside";
 	gap: var(--offset);
 
 	margin-bottom: var(--offset);
