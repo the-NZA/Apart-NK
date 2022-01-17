@@ -16,13 +16,18 @@
 .apartsingle__gallery {
 	grid-area: apGallery;
 
-	max-width: var(--site-width);
+	max-width: 100%;
 	min-height: 40vh;
 	padding: var(--offset-half);
 
 	box-shadow: var(--card-shadow-light);
 	border-radius: var(--offset-half);
 	background-color: var(--light-blue);
+}
+
+.apartsingle__gallery img {
+	border-radius: calc(var(--offset-half) / 2);
+	display: block;
 }
 
 .apartsingle__header {
