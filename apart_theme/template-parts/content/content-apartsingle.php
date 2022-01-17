@@ -3,34 +3,36 @@
  * Template part for displaying single apartment content
  */
 ?>
-
 <?php
 $apartID = get_the_ID();
+$apThumbnail = get_the_post_thumbnail_url($apartID, 'full');
+$apGallery = carbon_get_post_meta($apartID, 'apartprop_gallery');
 ?>
 
-<div class="apartsingle__gallery">
-	<?php $apGallery = carbon_get_post_meta($apartID, 'apartprop_gallery'); ?>
+<?php if (count($apGallery) > 0 || $apThumbnail) : ?>
+	<div class="apartsingle__gallery">
 
-	<?php if (count($apGallery) > 0) : ?>
-		<div class="apartgallery">
-			<?php foreach ($apGallery as $imgID) : ?>
-				<?php
-				$imgURL = wp_get_attachment_url($imgID);
-				?>
+		<?php if (count($apGallery) > 0) : ?>
+			<div class="apartgallery">
+				<?php foreach ($apGallery as $imgID) : ?>
+					<?php
+					$imgURL = wp_get_attachment_url($imgID);
+					?>
 
-				<div class="apartgallery__item">
-					<img src="<?php echo $imgURL; ?>">
-				</div>
-			<?php endforeach; ?>
-		</div>
+					<div class="apartgallery__item">
+						<img src="<?php echo $imgURL; ?>">
+					</div>
+				<?php endforeach; ?>
+			</div>
 
 
-	<?php else : ?>
+		<?php else : ?>
 
-		This is gallery
+			<img src="<?php echo $apThumbnail; ?>" alt="<?php get_the_title(); ?>">
 
-	<?php endif; ?>
-</div>
+		<?php endif; ?>
+	</div>
+<?php endif; ?>
 
 <header class="apartsingle__header">
 	<h1 class="apartsingle__title">

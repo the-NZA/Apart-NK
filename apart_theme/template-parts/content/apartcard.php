@@ -7,7 +7,7 @@
 <article class="apartcard">
 	<?php
 	$apartID = get_the_ID();
-	$apartImg = get_the_post_thumbnail('full');
+	$apartImg = get_the_post_thumbnail_url($apartID, 'full');
 	$apartTitle = get_the_title();
 	$hasImg = $apartImg ? true : false;
 	?>
