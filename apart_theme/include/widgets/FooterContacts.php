@@ -17,14 +17,13 @@ class FooterContactsWidget extends Widget
 	// Called when rendering the widget in the front-end
 	function front_end($args, $instance)
 	{
-		echo $args['before_title'] . $instance['title'] . $args['after_title'];
-		if ($instance['menu_select'] === 'value_is_not_set') {
-			echo "Menu doesn't show";
-			return;
-		}
-
 		$sitePhone = carbon_get_theme_option('aprt_phone_number');
 		$siteEmail = carbon_get_theme_option('aprt_email');
+
+		echo $args['before_title'] . $instance['title'] . $args['after_title'];
+		if (!$sitePhone && !$siteEmail) {
+			return;
+		}
 
 		$menu_list = '<ul class="footerwidget__body">';
 
