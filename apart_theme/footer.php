@@ -19,14 +19,7 @@ $siteEmail = carbon_get_theme_option('aprt_email');
 		<div class="footer__widgets">
 			<?php dynamic_sidebar('aprt_footer_1'); ?>
 
-			<div class="footerwidget">
-				<h3 class="footerwidget__title">Контакты</h3>
-
-				<ul class="footerwidget__body">
-					<li class="footerwidget__grid"><span>Телефон:</span> <a href="tel:<?php echo $sitePhone; ?>"><?php echo $sitePhone; ?></a></li>
-					<li class="footerwidget__grid"><span>Email:</span><a href="mailto:<?php echo $siteEmail; ?>"><?php echo $siteEmail; ?></a></li>
-				</ul>
-			</div>
+			<?php dynamic_sidebar('aprt_footer_2'); ?>
 
 			<?php dynamic_sidebar('aprt_footer_3'); ?>
 

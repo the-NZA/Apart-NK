@@ -103,9 +103,11 @@ function crb_load()
 function load_custom_widgets()
 {
 	require_once "include/widgets/MenuWithHeader.php";
+	require_once "include/widgets/FooterContacts.php";
 	// require_once "include/widgets/SocialLinksWidget.php";
 
 	register_widget('MenuWithHeaderWidget');
+	register_widget('FooterContactsWidget');
 	// register_widget('SocialLinksWidget');
 }
 
