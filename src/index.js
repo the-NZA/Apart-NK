@@ -7,7 +7,7 @@ import "milligram"; // Import miligram
 import "./css/index.css"; // Import styles
 
 window.addEventListener("DOMContentLoaded", function () {
-	if (document.querySelector(".apartsingle__gallery")) {
+	if (document.querySelector(".apartgallery")) {
 		HandleApartmentsGallery();
 	}
 
