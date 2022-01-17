@@ -32,3 +32,11 @@
 	font-size: 1.5rem;
 	line-height: 1.5;
 }
+
+.footerwidget .textwidget p {
+	margin-bottom: var(--offset-half);
+}
+
+.footerwidget .textwidget p:last-of-type {
+	margin-bottom: 0;
+}

@@ -17,15 +17,7 @@ $siteEmail = carbon_get_theme_option('aprt_email');
 <footer class="site-footer">
 	<div class="footer wrapper">
 		<div class="footer__widgets">
-			<div class="footerwidget">
-				<h3 class="footerwidget__title">О нас</h3>
-
-				<p class="footerwidget__text">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-					fugiat veritatis veniam dolorum? Suscipit commodi blanditiis culpa harum libero dolorum, id
-					dicta ipsum ex!
-				</p>
-			</div>
+			<?php dynamic_sidebar('aprt_footer_1'); ?>
 
 			<div class="footerwidget">
 				<h3 class="footerwidget__title">Контакты</h3>
@@ -36,23 +28,12 @@ $siteEmail = carbon_get_theme_option('aprt_email');
 				</ul>
 			</div>
 
-			<div class="footerwidget">
-				<h3 class="footerwidget__title">Меню</h3>
+			<?php dynamic_sidebar('aprt_footer_3'); ?>
 
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location'  => 'footer_menu',
-						'container'       => 'nav',
-						'container_class' => 'footerwidget',
-						'menu_class'      => 'footerwidget__body',
-						'echo'            => true,
-						'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-					)
-				);
-				?>
-			</div>
+			<?php dynamic_sidebar('aprt_footer_4'); ?>
 
+			<?php
+			/*
 			<div class="footerwidget">
 				<h3 class="footerwidget__title"><?php echo $siteName; ?></h3>
 
@@ -60,6 +41,8 @@ $siteEmail = carbon_get_theme_option('aprt_email');
 					г. Москва, Пресненская набережная д.12
 				</p>
 			</div>
+			*/
+			?>
 		</div>
 
 		<div class="footer__copyright">

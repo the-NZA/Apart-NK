@@ -99,6 +99,19 @@ function crb_load()
 	\Carbon_Fields\Carbon_Fields::boot();
 }
 
+// * Create custom carbon widgets
+function load_custom_widgets()
+{
+	require_once "include/widgets/MenuWithHeader.php";
+	// require_once "include/widgets/SocialLinksWidget.php";
+
+	register_widget('MenuWithHeaderWidget');
+	// register_widget('SocialLinksWidget');
+}
+
+// * Register custom widgets
+add_action('widgets_init', 'load_custom_widgets');
+
 // * Add Theme Styles and Scripts
 add_action("wp_enqueue_scripts", function () {
 	wp_enqueue_style('aprt-styles', get_stylesheet_directory_uri() . '/assets/main.css');
@@ -225,6 +238,57 @@ add_action('after_setup_theme', function () {
 
 	// * Include theme helpers
 	require_once "include/aprt_helpers.php";
+});
+
+// * Register custom sidebars and widgets
+add_action('widgets_init', function () {
+	register_sidebar(
+		[
+			'id' => 'aprt_footer_1',
+			'name' => 'Подвал - 1',
+			'description' => 'Перетащите сюда виджеты, чтобы добавить их в первую колонку футера.',
+			'before_widget' => '<div id="%1$s" class="foot widget footerwidget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class="footerwidget__title">',
+			'after_title' => '</h4>',
+		]
+	);
+
+	register_sidebar(
+		[
+			'id' => 'aprt_footer_2',
+			'name' => 'Подвал - 2',
+			'description' => 'Перетащите сюда виджеты, чтобы добавить их во вторую колонку футера.',
+			'before_widget' => '<div id="%1$s" class="foot widget footerwidget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class="footerwidget__title">',
+			'after_title' => '</h4>',
+		]
+	);
+
+	register_sidebar(
+		[
+			'id' => 'aprt_footer_3',
+			'name' => 'Подвал - 3',
+			'description' => 'Перетащите сюда виджеты, чтобы добавить их в третью колонку футера.',
+			'before_widget' => '<div id="%1$s" class="foot widget footerwidget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class="footerwidget__title">',
+			'after_title' => '</h4>',
+		]
+	);
+
+	register_sidebar(
+		[
+			'id' => 'aprt_footer_4',
+			'name' => 'Подвал - 4',
+			'description' => 'Перетащите сюда виджеты, чтобы добавить их в четвертую колонку футера.',
+			'before_widget' => '<div id="%1$s" class="foot widget footerwidget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class="footerwidget__title">',
+			'after_title' => '</h4>',
+		]
+	);
 });
 
 // * Remove prefix like "Archive: ", "Рубрика: ", "Метка: ", etc. from archive page title
