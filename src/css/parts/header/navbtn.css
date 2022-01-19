@@ -1,0 +1,64 @@
+.navbtn {
+}
+
+.navbtn--active {
+	background-color: rgba(var(--rgb-dark-blue), var(--alpha-75));
+}
+
+.navbtn--active .navbtn__line {
+	background-color: transparent;
+
+}
+
+.navbtn--active .navbtn__line::before {
+	top: 0;
+
+	transform: rotate(45deg);
+}
+
+.navbtn--active .navbtn__line::after {
+	top: 0;
+
+	transform: rotate(-45deg);
+}
+
+
+.navbtn__line {
+	width: 100%;
+	height: 3px;
+
+	background-color: var(--white);
+	border-radius: 2px;
+
+	position: relative;
+
+	transition: var(--ease-in-out-transition);
+}
+
+.navbtn__line::before{
+	content: "";
+	display: block;
+
+	width: 100%;
+	height: 3px;
+
+	background-color: var(--white);
+	border-radius: 2px;
+
+	position: absolute;
+	top: -8px;
+}
+
+.navbtn__line::after{
+	content: "";
+	display: block;
+
+	width: 100%;
+	height: 3px;
+
+	background-color: var(--white);
+	border-radius: 2px;
+
+	position: absolute;
+	top: 8px;
+}

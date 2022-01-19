@@ -30,6 +30,10 @@
 				</a>
 			</div>
 
+			<button class="header__navbtn navbtn">
+				<div class="navbtn__line"></div>
+			</button>
+
 			<?php
 			wp_nav_menu(
 				array(

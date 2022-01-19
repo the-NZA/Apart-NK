@@ -8,6 +8,7 @@
 /* Header styles */
 @import url("./parts/header/header.css");
 @import url("./parts/header/hnav.css");
+@import url("./parts/header/navbtn.css");
 
 /* Footer styles */
 @import url("./parts/footer/footer.css");

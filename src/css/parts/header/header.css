@@ -29,7 +29,57 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+
 	height: 100%;
+
 	padding: 0;
+}
+
+.header__nav--active {
+	display: flex !important;
+}
+
+.header__navbtn {
+	align-self: center;
+
+	display: none;
+	width: var(--offset);
+	height: var(--offset);
+
+	margin: 0;
+	padding: 5px;
+
+	border: none;
+	background-color: transparent;
+
+	transition: var(--ease-transition);
+}
+
+.header__navbtn:focus,
+.header__navbtn:hover {
+	background-color: rgba(var(--rgb-dark-blue), var(--alpha-75));
+}
+
+
+@media screen and (width <= 880px){
+	.header__navbtn {
+		display: block;
+		z-index: 2;
+	}
+
+	.header__nav {
+		display: none;
+
+		align-items: center;
+		justify-content: center;
+
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+
+		background-color: rgba(var(--rgb-gray), var(--alpha-100));
+	}
 
 }

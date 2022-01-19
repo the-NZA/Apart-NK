@@ -24,18 +24,6 @@ $siteEmail = carbon_get_theme_option('aprt_email');
 			<?php dynamic_sidebar('aprt_footer_3'); ?>
 
 			<?php dynamic_sidebar('aprt_footer_4'); ?>
-
-			<?php
-			/*
-			<div class="footerwidget">
-				<h3 class="footerwidget__title"><?php echo $siteName; ?></h3>
-
-				<p class="footerwidget__text">
-					г. Москва, Пресненская набережная д.12
-				</p>
-			</div>
-			*/
-			?>
 		</div>
 
 		<div class="footer__copyright">
