@@ -23,10 +23,6 @@ get_header(); ?>
 			<h1 class="herosection__title"><?php echo $heroTitle; ?></h1>
 			<p class="herosection__subtitle"><?php echo $heroSnippet; ?></p>
 		</div>
-
-		<button class="button herosection__btn">
-			<img src="/image/arrow-down.svg" alt="V">
-		</button>
 	</section>
 
 	<section class="homepage__aparts wrapper">
