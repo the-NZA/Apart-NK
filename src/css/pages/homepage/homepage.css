@@ -85,6 +85,10 @@
 	.homepage__cards .apartcard .apartcard__image {
 		min-height: calc(var(--site-width) / 5);
 	}
+
+	.homepage__map_frame {
+		min-height: 35vh;
+	}
 }
 
 @media screen and (width <= 680px){
@@ -96,6 +100,10 @@
 @media screen and (width <= 580px){
 	.homepage__cards .apartcard .apartcard__image {
 		min-height: calc(var(--site-width) / 6);
+	}
+
+	.homepage__map_frame {
+		min-height: 30vh;
 	}
 }
 
