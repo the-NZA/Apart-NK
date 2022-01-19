@@ -23,3 +23,54 @@
 	max-width: 800px ;
 	margin: 0;
 }
+
+@media screen and (width <= 1000px){
+	.herosection__wrapper {
+		max-width: 100%;
+		padding: calc(var(--offset) * 2);
+	}
+
+	.herosection__title {
+		font-size: 4rem;
+		max-width: 100%;
+	}
+
+	.herosection__subtitle {
+		max-width: 100%;
+	}
+}
+
+@media screen and (width <= 700px){
+	.herosection__wrapper {
+		padding: calc(var(--offset) * 1.5);
+	}
+
+	.herosection__title {
+		font-size: 3.5rem;
+	}
+
+	.herosection__subtitle {
+		font-weight: 500;
+	}
+}
+
+@media screen and (width <= 560px){
+	.herosection__title {
+		font-size: 3.3rem;
+		margin-bottom: var(--offset-half);
+	}
+
+	.herosection__subtitle {
+		text-align: justify;
+	}
+}
+
+@media screen and (width <= 460px){
+	.herosection__wrapper {
+		padding: var(--offset);
+	}
+
+	.herosection__title {
+		font-size: 2.5rem;
+	}
+}
