@@ -64,3 +64,43 @@
 	box-shadow: var(--card-shadow-light);
 	border-radius: var(--card-radius);
 }
+
+@media screen and (width <= 1200px){
+	.homepage__cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (width <= 1000px){
+	.homepage__servicecards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (width <= 780px){
+	.homepage__cards {
+		grid-template-columns: 1fr;
+	}
+
+	.homepage__cards .apartcard .apartcard__image {
+		min-height: calc(var(--site-width) / 5);
+	}
+}
+
+@media screen and (width <= 680px){
+	.homepage__servicecards {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (width <= 580px){
+	.homepage__cards .apartcard .apartcard__image {
+		min-height: calc(var(--site-width) / 6);
+	}
+}
+
+@media screen and (width <= 480px){
+	.homepage__cards .apartcard .apartcard__image {
+		min-height: calc(var(--site-width) / 8);
+	}
+}

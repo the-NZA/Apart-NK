@@ -30,5 +30,5 @@
 }
 
 .servicecard__snippet {
-	margin-bottom: var(--offset-half);
+	margin-bottom: 0;
 }
