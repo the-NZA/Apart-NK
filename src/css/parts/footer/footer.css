@@ -1,7 +1,7 @@
 .footer {
 	color: var(--white);
 	padding-top: var(--offset);
-	padding-bottom: var(--offset);
+	/* padding-bottom: var(--offset); */
 }
 
 .footer__widgets{
@@ -12,6 +12,8 @@
 }
 
 .footer__copyright{
+	padding-top: var(--offset-half);
+	border-top: 1px solid var(--white);
 	font-weight: 500;
 	vertical-align: bottom;
 }
@@ -23,4 +25,16 @@
 
 .footer__copyright a:hover {
 	color: var(--light-blue);
+}
+
+@media screen and (width <= 1100px){
+	.footer__widgets {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (width <= 560px){
+	.footer__widgets {
+		grid-template-columns: 1fr;
+	}
 }

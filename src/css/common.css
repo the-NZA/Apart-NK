@@ -16,6 +16,10 @@ body {
 	grid-template-rows: max-content 1fr max-content;
 }
 
+.site-body--no-scroll {
+	overflow: hidden;
+}
+
 .site-header {
 	background-color: var(--gray);
 	box-shadow: var(--header-shadow);
