@@ -32,7 +32,6 @@
 
 	position: relative;
 
-	transition: var(--ease-in-out-transition);
 }
 
 .navbtn__line::before{
@@ -47,6 +46,8 @@
 
 	position: absolute;
 	top: -8px;
+
+	transition: var(--ease-in-out-transition);
 }
 
 .navbtn__line::after{
@@ -61,4 +62,6 @@
 
 	position: absolute;
 	top: 8px;
+
+	transition: var(--ease-in-out-transition);
 }
