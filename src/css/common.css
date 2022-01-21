@@ -72,12 +72,20 @@ body {
 }
 
 @media screen and (width <= 780px){
+	.page-title {
+		font-size: 3rem;
+	}
+
 	.section-title {
 		font-size: 3rem;
 	}
 }
 
 @media screen and (width <= 480px){
+	.page-title {
+		font-size: 2.6rem;
+	}
+
 	.section-title {
 		font-size: 2.6rem;
 	}
