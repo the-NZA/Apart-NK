@@ -66,3 +66,31 @@
 .singlepage__article p {
 	margin-bottom: var(--offset-half);
 }
+
+@media screen and (width <= 1000px){
+	.singlepage__header {
+		padding: var(--offset);
+
+		min-height: unset;
+		max-height: unset;
+	}
+
+	.singlepage__article {
+		top: 0;
+		border-radius: 0;
+	}
+}
+
+@media screen and (width <= 600px){
+	.singlepage__header {
+		padding: var(--offset-half);
+	}
+
+	.singlepage__title {
+		font-size: 2.6rem;
+	}
+
+	.singlepage__snippet {
+		font-size: 1.5rem;
+	}
+}

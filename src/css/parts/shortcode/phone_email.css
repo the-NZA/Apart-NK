@@ -19,3 +19,17 @@
 	margin-bottom: var(--offset-half);
 	font-size: 2rem;
 }
+
+@media screen and (width <= 400px){
+	.phone_email {
+		flex-direction: column;
+		align-items: flex-start;
+
+		margin: 0;
+	}
+
+	.phone_email__item {
+		margin-right: 0;
+		margin-bottom: var(--offset);
+	}
+}
