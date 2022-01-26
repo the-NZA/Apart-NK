@@ -20,3 +20,25 @@
 	gap: var(--offset-half) var(--offset);
 }
 
+@media screen and (width <= 700px){
+	.apartprops {
+		width: 100%;
+	}
+
+	.apartprops__list {
+		grid-template-columns: repeat(4, 1fr);
+		gap: var(--offset-half);
+	}
+}
+
+@media screen and (width <= 500px){
+	.apartprops__list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (width <= 400px){
+	.apartprops__list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

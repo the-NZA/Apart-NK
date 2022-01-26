@@ -120,8 +120,7 @@ add_action("wp_enqueue_scripts", function () {
 	wp_enqueue_script('aprt-scripts', get_stylesheet_directory_uri() . '/assets/main.js', array(), null, true);
 
 	if (is_singular('apartments')) {
-		wp_enqueue_style('aprt-slick-styles', get_stylesheet_directory_uri() . '/assets/slick/slick.css');
-		wp_enqueue_script('aprt-slick-scripts', get_stylesheet_directory_uri() . '/assets/slick/slick.min.js', ['jquery'], null, false);
+		wp_enqueue_style('aprt-slider-styles', get_stylesheet_directory_uri() . '/assets/slider/tiny-slider.css');
 	}
 });
 

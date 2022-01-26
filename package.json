@@ -47,6 +47,7 @@
 	],
 	"dependencies": {
 		"milligram": "^1.4.1",
-		"normalize.css": "^8.0.1"
+		"normalize.css": "^8.0.1",
+		"tiny-slider": "^2.9.4"
 	}
 }

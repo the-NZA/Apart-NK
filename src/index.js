@@ -1,6 +1,4 @@
-// import tester from "./js/tester.js";
-// import HandleShowCartButton from "./js/showcart.js";
-import HandleApartmentsGallery from "./js/slick/apartments";
+import HandleApartmentsSlider from "./js/apartsingle/slider";
 import HandleMobileNavMenu from "./js/nav/navbtn";
 
 import "normalize.css"; // Import normalize
@@ -12,9 +10,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
 	// * Handle showing gallery only when <item>.apartgallery exists
 	if (document.querySelector(".apartgallery")) {
-		HandleApartmentsGallery();
+		HandleApartmentsSlider();
 	}
-
-	// tester();
-	// HandleShowCartButton();	// Show and mini cart by clicking showcart button
 });

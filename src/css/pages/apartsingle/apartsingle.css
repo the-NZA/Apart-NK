@@ -113,6 +113,7 @@
 		grid-template-areas: 
 			"apGallery"
 			"apHeader"
+			"apProps"
 			"apContent"
 			"apAside";
 	}
@@ -125,6 +126,16 @@
 @media screen and (width <= 780px){
 	.apartsingle__title {
 		font-size: 4rem;
+	}
+
+	.apartsingle__gallery {
+		padding: 10px;
+	}
+}
+
+@media screen and (width <= 700px){
+	.apartsingle__properties {
+		padding: calc(var(--offset-half) * 1.5);
 	}
 }
 
