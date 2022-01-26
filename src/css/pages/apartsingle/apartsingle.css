@@ -73,6 +73,10 @@
 	color: var(--dark-blue);
 }
 
+.apartsingle__content p:last-of-type {
+	margin-bottom: 0;
+}
+
 .apartsingle__aside {
 	grid-area: apAside;
 	align-self: baseline;
@@ -115,5 +119,17 @@
 
 	.apartsingle__title {
 		font-size: 4rem;
+	}
+}
+
+@media screen and (width <= 780px){
+	.apartsingle__title {
+		font-size: 4rem;
+	}
+}
+
+@media screen and (width <= 660px){
+	.apartsingle__gallery {
+		min-height: min-content;
 	}
 }
